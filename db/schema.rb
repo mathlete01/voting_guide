@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_09_012707) do
+ActiveRecord::Schema.define(version: 2020_11_09_052356) do
 
   create_table "choices", force: :cascade do |t|
     t.integer "year"
@@ -47,22 +47,20 @@ ActiveRecord::Schema.define(version: 2020_11_09_012707) do
   end
 
   create_table "regions", force: :cascade do |t|
-    t.integer "city_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["city_id"], name: "index_regions_on_city_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.integer "city_id"
-    t.boolean "group"
     t.string "name"
     t.string "email"
     t.string "password_digest"
     t.boolean "admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "group"
     t.index ["city_id"], name: "index_users_on_city_id"
   end
 
