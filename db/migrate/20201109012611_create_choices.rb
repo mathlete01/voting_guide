@@ -10,7 +10,6 @@ class CreateChoices < ActiveRecord::Migration[5.2]
       t.text :summary
       t.string :choice_type
       t.string :result
-      t.belongs_to :region, foreign_key: true
 
       t.timestamps
     end

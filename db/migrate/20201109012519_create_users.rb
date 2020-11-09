@@ -7,7 +7,6 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :email
       t.string :password_digest
       t.boolean :admin
-      t.belongs_to :city, foreign_key: true
 
       t.timestamps
     end
