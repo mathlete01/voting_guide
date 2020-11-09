@@ -1,3 +1,3 @@
 class Region < ApplicationRecord
-    has_many :choices, dependent: :destroy
+    has_many :choices
 end

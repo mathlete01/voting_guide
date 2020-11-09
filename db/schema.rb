@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_09_052356) do
+ActiveRecord::Schema.define(version: 2020_11_09_223108) do
 
   create_table "choices", force: :cascade do |t|
     t.integer "year"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_052356) do
     t.integer "choice_id"
     t.string "decision"
     t.string "link"
-    t.string "annotation"
+    t.text "annotation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["choice_id"], name: "index_decisions_on_choice_id"
