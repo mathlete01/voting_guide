@@ -7,15 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 City.destroy_all
+Region.destroy_all
 
 cities_array = ["San Francisco", "Los Angeles", "Seattle"]
+
+regions_array = ["Local", "Regional", "State", "Federal"]
 
 cities_array.each do |city| 
     City.create(name: city)
 end
 
-sf = City.create(name: "San Francico") 
-u2 =User.create(username: "Alex", password: "password1") 
+# regions_array.each do |region| 
+#     Region.create(name: region)
+# end
 
-p1 = Post.create(title: "Hello world", content: "helooooo", user: u)
-p2 = Post.create(title: "my first post", content: "so excited", user: u2)
+
