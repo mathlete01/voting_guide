@@ -2,6 +2,7 @@
 
 <ul>
     <% @decisions.each do |d| %>
+    
     <li><%= d.choice.category.title %>: <%= d.choice.choice %>: <%= d.user.name %>: <%= d.decision %></li>
     <% end %>
 </ul>
