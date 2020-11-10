@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   resources :decisions
   resources :choices
   resources :users

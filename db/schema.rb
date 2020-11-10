@@ -10,22 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_09_223108) do
+ActiveRecord::Schema.define(version: 2020_11_10_003350) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "choices", force: :cascade do |t|
     t.integer "year"
     t.string "season"
     t.integer "city_id"
-    t.integer "region_id"
-    t.string "category"
     t.string "choice"
     t.text "summary"
     t.string "choice_type"
     t.string "result"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "region"
+    t.integer "category_id"
     t.index ["city_id"], name: "index_choices_on_city_id"
-    t.index ["region_id"], name: "index_choices_on_region_id"
   end
 
   create_table "cities", force: :cascade do |t|
@@ -44,12 +49,6 @@ ActiveRecord::Schema.define(version: 2020_11_09_223108) do
     t.datetime "updated_at", null: false
     t.index ["choice_id"], name: "index_decisions_on_choice_id"
     t.index ["user_id"], name: "index_decisions_on_user_id"
-  end
-
-  create_table "regions", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

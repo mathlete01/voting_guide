@@ -2,6 +2,6 @@
 
 <ul>
     <% @choices.each do |choice| %>
-        <li><%= choice.category %></li>
+        <li><%= choice.category[:title] %>: <%= choice.choice  %></li>
     <% end %>
 </ul>
