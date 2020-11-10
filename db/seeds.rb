@@ -58,7 +58,7 @@ joe_biden = Choice.create(
     region: "National", 
     category: sf_president, 
     choice: "Joe Biden", 
-    summary: Faker::Lorem.paragraphs, 
+    summary: "Biden prevailed over a crowded Democratic field with a largely moderate message of ending Trump-era partisan toxicity. His platform includes expanding government-sponsored health care options and a $2 trillion program to counter climate change.", 
     choice_type: "Choose 1", 
     result: nil)
 
@@ -69,7 +69,7 @@ donald_trump = Choice.create(
     region: "National", 
     category: sf_president, 
     choice: "Donald Trump", 
-    summary: Faker::Lorem.paragraphs, 
+    summary: "Trump has focused on energizing his base throughout his nearly four years in office; supporters say he sticks to his promises. He's running as the savior of a pandemic-battered economy and guardian of an increasingly conservative federal bench.", 
     choice_type: "Choose 1", 
     result: nil)
 
@@ -80,7 +80,7 @@ prop_k = Choice.create(
     region: "State", 
     category: sf_prop_k, 
     choice: "K", 
-    summary: Faker::Lorem.paragraphs, 
+    summary: "Would re-fund the California Institute for Regenerative Medicine, the state’s stem cell agency, by allowing it to issue $5.5 billion in bonds for research, training and facilities construction", 
     choice_type: "Yes/No", 
     result: nil)
 
@@ -91,7 +91,7 @@ matt_alexander = Choice.create(
     region: "Local", 
     category: sf_school_board, 
     choice: "Matt Alexander", 
-    summary: Faker::Lorem.paragraphs, 
+    summary: "Alexander, an educator and organizer, said his top focus is “increasing revenue and allocating more funds directly to schools and classrooms.” He said the current school assignment system is not “sufficiently equitable and not producing integrated schools\”", 
     choice_type: "Choose 2 of 4", 
     result: nil)
 
@@ -102,7 +102,7 @@ jenny_lam = Choice.create(
     region: "Local", 
     category: sf_school_board, 
     choice: "Jenny Lam", 
-    summary: Faker::Lorem.paragraphs, 
+    summary: "Lam, an incumbent and the mayor’s education adviser, said her top priority is “to meet the educational, health and well-being for all students, staff and families.” Lam said her criteria for changes to the assignment system include “equity, diversity, proximity and predictability for families.\”", 
     choice_type: "Choose 2 of 4", 
     result: nil)
 
@@ -113,7 +113,7 @@ mark_sanchez = Choice.create(
     region: "Local", 
     category: sf_school_board, 
     choice: "Mark Sanchez", 
-    summary: Faker::Lorem.paragraphs, 
+    summary: "Sanchez, the board’s president and a public school teacher, said his main focus will be on addressing the “lack of appropriate funding.” Sanchez said that since Prop. 13 passed in 1978, the state has faced a “systemic, decades-long structural problem.” As for school assignment, he said he leans toward a system for up to four to six zones that incorporate choice.", 
     choice_type: "Choose 2 of 4", 
     result: nil)
 
@@ -124,7 +124,7 @@ michelle_parker = Choice.create(
     region: "Local", 
     category: sf_school_board, 
     choice: "Michelle Parker", 
-    summary: Faker::Lorem.paragraphs, 
+    summary: "A parent and nonprofit director, Parker said her top priority is to get the district on “firm financial footing.” Parker said the district must focus on revenue generation through ballot measures and rental income from district property as well as advocacy for more state funding. She also wants a simpler assignment system that increases diversity.", 
     choice_type: "Choose 2 of 4", 
     result: nil)
 
