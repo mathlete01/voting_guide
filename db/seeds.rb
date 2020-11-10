@@ -11,7 +11,7 @@ num = 10
 # Sample data
 city_array = ["San Francisco", "Los Angeles", "Seattle"]
 region_array = ["Local", "Regional", "State", "Federal"]
-decision_array = ["Yes", "No", "No Endorsement"]
+decision_array = ["Yes", "No","Yes", "No","Yes", "No","Yes", "No","Yes", "No",  "No Endorsement"]
 group_array = ["Sierra Club", "Alice B. Toklas Democratic Club", "Leage of Pissed Off Voters"]
 
 # Create Cities
@@ -128,27 +128,20 @@ michelle_parker = Choice.create(
     choice_type: "Choose 2 of 4", 
     result: nil)
 
-# num.times do
-#     Choice.create(
-#         year: 2020, 
-#         season: "Fall", 
-#         city: City.all.first, 
-#         #region: Region.all.sample, 
-#         region: region_array.sample, 
-#         category: Faker::Job.title, 
-#         #category: category_array.sample, 
-#         choice: Faker::Name.name, 
-#         summary: Faker::Lorem.paragraphs, 
-#         choice_type: "Yes/No", 
-#         result: nil)
-# end
-
 # Create Decisions
-num.times do
+
+i = 0
+while i < User.all.length do 
+    #byebug
+    j = 0
+    while j < Choice.all.length do 
     Decision.create(
-        user: User.all.sample, 
-        choice: Choice.all.sample, 
+        user: User.find(i+1), 
+        choice: Choice.find(j+1), 
         decision: decision_array.sample, 
         link: Faker::Internet.url, 
         annotation: Faker::Lorem.paragraphs)
+        j += 1
+    end
+    i += 1
 end
