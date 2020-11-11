@@ -1,8 +1,17 @@
 <h1>Decisions</h1>
 
 <ul>
-    <% @decisions.each do |d| %>
-    
-    <li><%= d.choice.category.title %>: <%= d.choice.choice %>: <%= d.user.name %>: <%= d.decision %></li>
+    <% @categories.each do |cat| %>
+        <li><b><%= cat.title %></b></li>
+        <ul>
+            <% cat.choices.each do |ch| %>
+            <li><b><%= ch.choice %></b>: <i><%= ch.summary %></i></li>
+            <ul>
+                <% ch.decisions.each do |dec| %>
+                <li><b><%= link_to dec.user.name, dec %></b>: <%= dec.decision %></li>
+                <% end %>
+            </ul>
+            <% end %>
+        </ul>
     <% end %>
 </ul>

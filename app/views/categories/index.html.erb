@@ -8,7 +8,7 @@
             <li><b><%= ch.choice %></b>: <i><%= ch.summary %></i></li>
             <ul>
                 <% ch.decisions.each do |dec| %>
-                <li><b><%= dec.user.name %></b>: <%= dec.decision %></li>
+                <li><b><%= link_to dec.user.name, dec %></b>: <%= dec.decision %></li>
                 <% end %>
             </ul>
             <% end %>

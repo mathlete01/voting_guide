@@ -8,5 +8,7 @@ class DecisionsController < ApplicationController
 
     def show
         @decision = Decision.find(params[:id])
+        #@category = Category.find(params[:id])
+        #@choice = Choice.find(params[:id])
     end
 end
