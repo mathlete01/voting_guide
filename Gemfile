@@ -62,3 +62,7 @@ end
 #gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "faker", "~> 2.14"
+
+gem "awesome_print", "~> 1.8"
+
+gem "pp", "~> 0.1.0"

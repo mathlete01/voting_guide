@@ -47,6 +47,7 @@ GEM
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
+    awesome_print (1.8.0)
     bindex (0.8.1)
     bootsnap (1.5.0)
       msgpack (~> 1.0)
@@ -105,6 +106,7 @@ GEM
     nio4r (2.5.4)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
+    pp (0.1.0)
     public_suffix (4.0.6)
     puma (3.12.6)
     rack (2.2.3)
@@ -192,6 +194,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print (~> 1.8)
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15)
@@ -200,6 +203,7 @@ DEPENDENCIES
   faker (~> 2.14)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
+  pp (~> 0.1.0)
   puma (~> 3.11)
   rails (~> 5.2.3)
   sass-rails (~> 5.0)

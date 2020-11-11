@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voting Guide: Choices</title>
+</head>
+<body>
+
+<h1>Choices</h1>
+
+<ul>
+    <% @choices.each do |choice| %>
+        <li><%= choice.category[:title] %>: <%= choice.choice %></li>
+    <% end %>
+</ul>
+
+</body>
+</html>
