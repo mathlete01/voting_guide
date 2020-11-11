@@ -1,15 +1,14 @@
 <h1>Categories</h1>
-<h1>Hello Hal</h1>
 
 <ul>
     <% @categories.each do |cat| %>
-        <li><%= cat.title %></li>
+        <li><b><%= cat.title %></b></li>
         <ul>
             <% cat.choices.each do |ch| %>
-            <li><%= ch.choice %>: <%= ch.summary %></li>
+            <li><b><%= ch.choice %></b>: <i><%= ch.summary %></i></li>
             <ul>
                 <% ch.decisions.each do |dec| %>
-                <li><%= dec.user.name %>: <%= dec.decision %></li>
+                <li><b><%= dec.user.name %></b>: <%= dec.decision %></li>
                 <% end %>
             </ul>
             <% end %>

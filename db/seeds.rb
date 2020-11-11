@@ -11,7 +11,7 @@ num = 10
 # Sample data
 city_array = ["San Francisco", "Los Angeles", "Seattle"]
 region_array = ["Local", "Regional", "State", "Federal"]
-decision_array = ["Yes", "No","Yes", "No","Yes", "No","Yes", "No","Yes", "No",  "No Endorsement"]
+decision_array = ["Yes", "No","Yes", "No","Yes", "No","Yes", "No","Yes", "No", "Yes", "No","Yes", "No","Yes", "No","Yes", "No","Yes", "No", "No Endorsement"]
 group_array = ["Sierra Club", "Alice B. Toklas Democratic Club", "Leage of Pissed Off Voters"]
 
 # Create Cities
