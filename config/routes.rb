@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 
   get "/decisions/:user_id/:choice_id/new", to: "decisions#new", as: "new_decision"
 
+  get "signup", to: "users#new", as: "signup"
+
 end
