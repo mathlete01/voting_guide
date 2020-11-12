@@ -1,4 +1,11 @@
 <h1>Decisions</h1>
+<% if logged_in? %>
+<% 
+=begin %>
+<h3>Welcome, <%= current_user %>!</h3>
+<%
+=end %>
+<% end %>
 
 <ul>
     <% @categories.each do |cat| %>
@@ -8,7 +15,7 @@
             <li><b><%= ch.choice %></b>: <i><%= ch.summary %></i></li>
             <ul>
                 <% ch.decisions.each do |dec| %>
-                    <li><b><%= link_to dec.user.name, decision_path(dec) %></b>: <%= dec.decision %></li>
+                    <li><b><%= dec.user.name %></b>: <%= dec.decision %></li>
                 <% end %>
                 <% @users.each do |u| %>
 <% 
