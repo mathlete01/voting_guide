@@ -3,7 +3,6 @@
 <h3>Welcome, <%= current_user.username %>!</h3>
 <% end %>
 <ul>
-    <% has_user_decided = false %>
     <% @categories.each do |cat| %>
         <li><b><%= cat.title %></b></li>
         <ul>
@@ -15,18 +14,8 @@
                         <li><b><%= link_to dec.user.name, decision_path(dec) %></b>: <%= dec.decision %></li>
                     <% end %>
                     <% if dec.user == current_user %>
-                        
-                        <% if dec.decision.length > 0 %>
-                            <%  has_user_decided = true %>
-                            <li><b><%= link_to current_user.username, decision_path(dec) %></b>: <%= dec.decision %></li>
-                        <% end %>
+                        <li><b><%= link_to current_user.username, edit_decision_path(dec) %></b>: <%= dec.decision %></li>
                     <% end %>
-                <% end %>
-                <h1>has_user_decided </h1>
-                <%= has_user_decided %>
-                <% if has_user_decided == false %>
-                    <h1>has_user_decided == false </h1>
-                    <li><b><%= link_to current_user.username, new_decision_path(user_id: current_user, choice_id: ch) %></b>: </li> 
                 <% end %>
             </ul>
             <% end %>

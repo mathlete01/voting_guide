@@ -12,4 +12,18 @@ class User < ApplicationRecord
       false
     end
   end 
+
+  def make_empty_decisions
+    i = 0
+    while i < Choice.all.length do 
+        Decision.create(
+            user: self, 
+            choice: Choice.find(i+1), 
+            decision: "", 
+            link: "", 
+            annotation: "")
+            i += 1
+    end
+  end
+
 end
