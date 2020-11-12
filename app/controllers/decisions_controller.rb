@@ -1,6 +1,6 @@
 class DecisionsController < ApplicationController
 
-    #before_action :get_user, only: [:show, :edit, :create, :update, :destroy]
+    before_action :get_decision, only: [:update, :destroy]
 
     def index
         @decisions = Decision.all
@@ -36,15 +36,27 @@ class DecisionsController < ApplicationController
         @decision = Decision.find(params[:id])
     end
 
+    def update
+        if @decision.update(decision_params)
+            redirect_to @decision
+        else
+            render :edit
+        end
+    end
+    
+    def destroy
+        @decision.destroy
+        redirect_to decisions_path
+    end
+
     private
 
-    def get_user
-        #@user = @decision.user
+    def get_decision
+        @decision = Decision.find(params[:id])
     end
 
     def decision_params
-        params.require(:decision).permit(:user, :choice, :decision, :link, :annotation)
+        params.require(:decision).permit(:decision, :choice_id, :user_id)
     end
-
 
 end

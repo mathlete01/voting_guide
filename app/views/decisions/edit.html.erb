@@ -1,5 +1,4 @@
-<h1>Decide</h1>
-<h1><%= @user[:name] %>, decide on <%= @choice[:choice] %></h1>
+<h1>Edit Decision</h1>
 
 
 <%= form_for @decision do |f| %>
@@ -10,11 +9,7 @@
             <% end %>
         </ul>
     <% end %>
-
     <%= f.label :decision %>
-    <%= f.text_field :decision %><br>
-    <%= hidden_field_tag :user_id, @user[:id] %>
-    <%= hidden_field_tag :choice_id, @choice[:id] %>
-    <br>
+    <%= f.text_field :decision %>
     <%= f.submit %>
 <% end %>
