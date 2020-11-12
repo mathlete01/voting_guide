@@ -13,19 +13,9 @@
             <li><b><%= ch.choice %></b>: <i><%= ch.summary %></i></li>
             <ul>
                 <% ch.decisions.each do |dec| %>
+                    <li><b><%= link_to dec.user.name, decision_path(dec) %></b>: <%= dec.decision %></li>
                     <li><b><%= dec.user.name %></b>: <%= dec.decision %></li>
-                <% end %>
-                <% @users.each do |u| %>
-<% 
-=begin %>
-If statement below is a hack to not show groups twice
-<%
-=end %>
-                    <% if u.group == false %>
-                        <li><b><%= link_to u.name, new_decision_path(user_id: u, choice_id: ch) %></b></li>
-                    <% end %>
-                <% end %>
-                
+                <% end %>  
             </ul>
             <% end %>
         </ul>

@@ -1,5 +1,6 @@
 <h1>Decide</h1>
 <h1><%= @user[:name] %>, decide on <%= @choice[:choice] %></h1>
+<h1><%= current_user.username %>, decide on <%= @choice[:choice] %></h1>
 
 
 <%= form_for @decision do |f| %>
