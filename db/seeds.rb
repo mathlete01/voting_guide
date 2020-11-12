@@ -12,7 +12,7 @@ num = 10
 city_array = ["San Francisco", "Los Angeles", "Seattle"]
 region_array = ["Local", "Regional", "State", "Federal"]
 decision_array = ["Yes", "No","Yes", "No","Yes", "No","Yes", "No","Yes", "No", "Yes", "No","Yes", "No","Yes", "No","Yes", "No","Yes", "No", "Yes", "No","Yes", "No","Yes", "No","Yes", "No","Yes", "No", "Yes", "No","Yes", "No","Yes", "No","Yes", "No","Yes", "No", "Yes", "No","Yes", "No","Yes", "No","Yes", "No","Yes", "No", "Yes", "No","Yes", "No","Yes", "No","Yes", "No","Yes", "No", "No Endorsement"]
-group_array = ["Sierra Club", "Alice B. Toklas Democratic Club", "Leage of Pissed Off Voters"]
+group_array = ["Sierra Club", "Alice B. Toklas Democratic Club", "League of Pissed Off Voters"]
 
 # Create Cities
 city_array.each do |city| 
@@ -24,17 +24,20 @@ sf_president = Category.create(title: "President")
 sf_prop_k = Category.create(title: "Propositon")
 sf_school_board = Category.create(title: "School Board")
 
+
 # Create User for Me
-User.create(
+m = User.create(
     city: City.all.first, 
     group: false, 
     name: "Matty Sallin", 
     email: "msallin@gmail.com", 
     password_digest: "yourmom", 
-    admin: true)
+    admin: true,
+    username: "msallin")
 
 # Create Users: Groups
 # city: City.all[id=1]
+
 i = 0
 while i < group_array.length do 
     User.create(
@@ -43,7 +46,8 @@ while i < group_array.length do
         name: group_array[i], 
         email: "",
         password_digest: "", 
-        admin: false)
+        admin: false,
+        username: "")
     i += 1
 end
 
