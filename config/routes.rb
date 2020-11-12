@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   resources :categories
-  resources :decisions
+  resources :decisions, except: :new
   resources :choices
   resources :users
   resources :regions
   resources :cities
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get "/decisions/:user_id/:choice_id/new", to: "decisions#new", as: "new_decision"
+
 end

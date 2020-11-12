@@ -7,8 +7,11 @@
             <% cat.choices.each do |ch| %>
             <li><b><%= ch.choice %></b>: <i><%= ch.summary %></i></li>
             <ul>
+                <% @users.each do |u| %>
+                <li><b><%= link_to u.name, new_decision_path(user_id: u, choice_id: ch) %></b></li>
+                <% end %>
                 <% ch.decisions.each do |dec| %>
-                <li><b><%= link_to dec.user.name, dec %></b>: <%= dec.decision %></li>
+                <li><b><%= link_to dec.user.name, decision_path(dec) %></b>: <%= dec.decision %></li>
                 <% end %>
             </ul>
             <% end %>
