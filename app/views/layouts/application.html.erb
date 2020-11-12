@@ -14,13 +14,15 @@
       <% flash.each do |k, v| %>
         <p class="<%= k %>"><%= v %></p>
       <% end %>
-  
+  <p style="text-align:right">
     <% if logged_in? %>
+
       <%= link_to "Logout", sessions_path, method: :delete %>
     <% else %>
       <%= link_to "Sign Up", signup_path %>
       <%= link_to "Sign In", login_path %>
     <% end %>
+    </p>
     <%= yield %>
   </body>
 </html>

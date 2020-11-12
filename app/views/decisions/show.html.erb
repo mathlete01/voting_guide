@@ -1,5 +1,11 @@
+<%= link_to "Home", decisions_path %>
+
 <h1><%= @decision.choice.category.title %>: <%= @decision.choice.choice %></h1>
-<h2><%= @decision.user.name %>: <%= @decision.decision %></h2>
+<% if @decision.user.group == true %>
+    <h2><%= @decision.user.name %>: <%= @decision.decision %></h2>
+<% else %>
+    <h2><%= @decision.user.username %>: <%= @decision.decision %></h2>
+<% end %>
 
 
 
@@ -8,4 +14,3 @@
 <br>
  <%= button_to "Delete", @decision, method: :delete, data: {confirm: "Are you sure?"} %>
 <br>
-<%= link_to "Home", decisions_path %>
