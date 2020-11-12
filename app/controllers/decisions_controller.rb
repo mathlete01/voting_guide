@@ -46,7 +46,7 @@ class DecisionsController < ApplicationController
     
     def destroy
         @decision.destroy
-        redirect_to '/decisions'
+        redirect_to decisions_path
     end
 
     private

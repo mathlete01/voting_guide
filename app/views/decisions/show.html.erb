@@ -3,6 +3,9 @@
 
 
 
-<%= link_to "Edit", edit_decision_path %>
+
+<%= button_to "Edit", edit_decision_path, method: :get %>
+<br>
+ <%= button_to "Delete", @decision, method: :delete, data: {confirm: "Are you sure?"} %>
 <br>
 <%= link_to "Home", decisions_path %>
