@@ -11,7 +11,7 @@ num = 10
 # Sample data
 city_array = ["San Francisco", "Los Angeles", "Seattle"]
 region_array = ["Local", "Regional", "State", "Federal"]
-decision_array = ["Yes", "No","Yes", "No","Yes", "No","Yes", "No","Yes", "No",  "No Endorsement"]
+decision_array = ["Yes", "No","Yes", "No","Yes", "No","Yes", "No","Yes", "No", "Yes", "No","Yes", "No","Yes", "No","Yes", "No","Yes", "No", "Yes", "No","Yes", "No","Yes", "No","Yes", "No","Yes", "No", "Yes", "No","Yes", "No","Yes", "No","Yes", "No","Yes", "No", "Yes", "No","Yes", "No","Yes", "No","Yes", "No","Yes", "No", "Yes", "No","Yes", "No","Yes", "No","Yes", "No","Yes", "No", "No Endorsement"]
 group_array = ["Sierra Club", "Alice B. Toklas Democratic Club", "Leage of Pissed Off Voters"]
 
 # Create Cities
@@ -23,6 +23,15 @@ end
 sf_president = Category.create(title: "President")
 sf_prop_k = Category.create(title: "Propositon")
 sf_school_board = Category.create(title: "School Board")
+
+# Create User for Me
+User.create(
+    city: City.all.first, 
+    group: false, 
+    name: "Matty Sallin", 
+    email: "msallin@gmail.com", 
+    password_digest: "yourmom", 
+    admin: true)
 
 # Create Users: Groups
 # city: City.all[id=1]
@@ -40,15 +49,15 @@ end
 
 # Create Users: Individuals
 # city: City.all[id=1]
-3.times do
-    User.create(
-        city: City.all.first, 
-        group: false, 
-        name: Faker::Name.name, 
-        email: Faker::Internet.email, 
-        password_digest: Faker::Internet.password, 
-        admin: false)
-end
+# 3.times do
+#     User.create(
+#         city: City.all.first, 
+#         group: false, 
+#         name: Faker::Name.name, 
+#         email: Faker::Internet.email, 
+#         password_digest: Faker::Internet.password, 
+#         admin: false)
+# end
 
 # Create Choices
 joe_biden = Choice.create(
@@ -130,9 +139,8 @@ michelle_parker = Choice.create(
 
 # Create Decisions
 
-i = 0
+i = 1
 while i < User.all.length do 
-    #byebug
     j = 0
     while j < Choice.all.length do 
     Decision.create(
