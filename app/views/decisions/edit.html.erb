@@ -1,0 +1,15 @@
+<h1>Edit Decision</h1>
+
+
+<%= form_for @decision do |f| %>
+    <% if @decision.errors.any? %>
+        <ul>
+            <% @decision.errors.full_messages.each do |m| %>
+                <li><%= m %></li>
+            <% end %>
+        </ul>
+    <% end %>
+    <%= f.label :decision %>
+    <%= f.text_field :decision %>
+    <%= f.submit %>
+<% end %>
