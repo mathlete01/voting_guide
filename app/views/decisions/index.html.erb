@@ -5,10 +5,14 @@
         <li><b><%= cat.title %></b></li>
         <ul>
             <% cat.choices.each do |ch| %>
-            <li><b><%= ch.choice %></b>: <i><%= ch.summary %></i></li>
+            <li><b><%= ch.choice %></b><br><i><%= ch.summary %></i></li>
             <ul>
                 <% ch.decisions.each do |dec| %>
+                    <% if dec.user.group == true %>
+                        <li><b><%= dec.user.name %></b>: <%= dec.decision %></li>
+                    <% else %>
                     <li><b><%= link_to dec.user.name, decision_path(dec) %></b>: <%= dec.decision %></li>
+                    <% end %>
                 <% end %>
                 <% @users.each do |u| %>
 <% 
@@ -18,6 +22,12 @@ If statement below is a hack to not show groups twice
 =end %>
                     <% if u.group == false %>
                         <li><b><%= link_to u.name, new_decision_path(user_id: u, choice_id: ch) %></b></li>
+<% 
+=begin %>
+                        <li><b><%= u.choices.first.choice %></b></li>
+                        <li><b><%= u.decisions.first.decision %></b></li>
+<%
+=end %>
                     <% end %>
                 <% end %>
                 
