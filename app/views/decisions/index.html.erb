@@ -17,7 +17,13 @@
                     <div class = "group" >
                         <% if dec.user.group == true %>
                             <li><%= dec.user.name %></li>
-                            <b><%= link_to dec.decision, decision_path(dec) %></b>
+                            <% if dec.decision == "Yes" %>
+                                <b><%= link_to dec.decision, decision_path(dec), class: "yes" %></b>
+                            <% elsif dec.decision == "No" %>
+                                <b><%= link_to dec.decision, decision_path(dec), class: "no" %></b>
+                            <% else %>
+                                <b><%= link_to dec.decision, decision_path(dec), class: "whatever" %></b>
+                            <% end %>
                             <br>
                         <% end %>
                     </div>
@@ -27,7 +33,13 @@
                             <% if dec.decision == "" %>
                                 <li><b><%= link_to "Decide", edit_decision_path(dec) %></b></li>
                             <% else %>
-                                <b><%= link_to dec.decision, edit_decision_path(dec) %></b>
+                                <% if dec.decision == "Yes" %>
+                                    <b><%= link_to dec.decision, edit_decision_path(dec), class: "yes"  %></b>
+                                <% elsif dec.decision == "No" %>
+                                    <b><%= link_to dec.decision, edit_decision_path(dec), class: "no"  %></b>
+                                <% else %>
+                                    <b><%= link_to dec.decision, edit_decision_path(dec), class: "whatever"  %></b>
+                                <% end %>
                             <% end %>
                         <% end %>
                     </div>

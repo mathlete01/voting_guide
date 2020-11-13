@@ -7,6 +7,17 @@
 }
 
 #outer{ 
-   display: flex; justify-content: space-around
-      
+   display: flex; justify-content: space-around  
+}
+
+a.yes{
+    color:green
+}
+
+a.no{
+    color:red
+}
+
+a.whatever{
+    color:gray
 }

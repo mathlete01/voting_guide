@@ -13,10 +13,10 @@
  *= require_tree .
  *= require_self
  */
-.no {
+.danger {
     color:red;
 }
 
-.yes{
+.success{
     color:green
 }
