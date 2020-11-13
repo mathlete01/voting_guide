@@ -7,14 +7,16 @@
         <li><b><%= cat.title %></b></li>
         <ul>
             <% cat.choices.each do |ch| %>
-            <li><b><%= ch.choice %></b>: <i><%= ch.summary %></i></li>
+            <li><b><%= ch.choice %></b><br><i><%= ch.summary %></i></li>
             <ul>
                 <% ch.decisions.each do |dec| %>
                     <% if dec.user.group == true %>
+
                         <li><b><%= link_to dec.user.name, decision_path(dec) %></b>: <%= dec.decision %></li>
                     <% end %>
                     <% if dec.user == current_user %>
                         <li><b><%= link_to current_user.username, edit_decision_path(dec) %></b>: <%= dec.decision %></li>
+
                     <% end %>
                 <% end %>
             </ul>
