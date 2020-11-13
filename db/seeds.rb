@@ -26,12 +26,14 @@ sf_school_board = Category.create(title: "School Board")
 
 
 # Create User for Me
-User.create(
-    city: City.all.first, 
+m = User.create(
+    #city: City.all.first, 
     group: false, 
     name: "Matty Sallin", 
     email: "msallin@gmail.com", 
-    password_digest: "yourmom", 
+
+    password: "yourmom", 
+
     admin: true,
     username: "msallin")
 
@@ -41,13 +43,15 @@ User.create(
 i = 0
 while i < group_array.length do 
     User.create(
-        city: City.all.first, 
+        #city: City.all.first, 
         group: true, 
         name: group_array[i], 
         email: "",
-        password_digest: "", 
+
+        password: Faker::Internet.password, 
         admin: false,
-        username: "")
+        username: Faker::Internet.username)
+
     i += 1
 end
 
@@ -59,7 +63,7 @@ end
 #         group: false, 
 #         name: Faker::Name.name, 
 #         email: Faker::Internet.email, 
-#         password_digest: Faker::Internet.password, 
+#         password: Faker::Internet.password, 
 #         admin: false)
 # end
 
