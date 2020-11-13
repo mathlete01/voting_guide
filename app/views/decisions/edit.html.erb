@@ -1,4 +1,4 @@
-<h1>Edit Decision</h1>
+<h1><%= @decision.choice.category.title %>: <%= @decision.choice.choice %></h1>
 
 
 <%= form_for @decision do |f| %>
@@ -9,7 +9,10 @@
             <% end %>
         </ul>
     <% end %>
-    <%= f.label :decision %>
-    <%= f.text_field :decision %>
+   
+    <%= f.radio_button :decision, 'Yes' %> 
+    <%= f.label :decision, 'Yes' %>
+    <%= f.radio_button :decision, 'No' %> 
+    <%= f.label :decision, 'No' %>
     <%= f.submit %>
 <% end %>

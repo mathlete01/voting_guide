@@ -10,18 +10,18 @@
   </head>
 
   <body>
-  
-      <% flash.each do |k, v| %>
-        <p class="<%= k %>"><%= v %></p>
-      <% end %>
+      
   <p style="text-align:right">
     <% if logged_in? %>
-
       <%= link_to "Logout", sessions_path, method: :delete %>
     <% else %>
-      <%= link_to "Sign Up", signup_path %>
-      <%= link_to "Sign In", login_path %>
+      <%= link_to "Sign up", signup_path %> or <%= link_to "sign in", login_path %> to create your own voting guide
     <% end %>
+    <% flash.each do |k, v| %>
+        <p class="<%= k %>"><%= v %></p>
+      <% end %>
+      <h1>Ballot Buddy</h1>
+      <h3>The San Francisco Endorsements Aggregator</h3>
     </p>
     <%= yield %>
   </body>
