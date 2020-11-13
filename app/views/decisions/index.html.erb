@@ -2,23 +2,25 @@
 <% if logged_in? %>
 <h3>Welcome, <%= current_user.username %>!</h3>
 <% end %>
-<ul>
-    <% @categories.each do |cat| %>
-        <li><b><%= cat.title %></b></li>
-        <ul>
-            <% cat.choices.each do |ch| %>
-            <li><b><%= ch.choice %></b>: <i><%= ch.summary %></i></li>
+<div >
+    <ul>
+        <% @categories.each do |cat| %>
+            <li><b><%= cat.title %></b></li>
             <ul>
-                <% ch.decisions.each do |dec| %>
-                    <% if dec.user.group == true %>
-                        <li><b><%= link_to dec.user.name, decision_path(dec) %></b>: <%= dec.decision %></li>
+                <% cat.choices.each do |ch| %>
+                <li><b><%= ch.choice %></b>: <i><%= ch.summary %></i></li>
+                <ul id = "matrix" >
+                    <% ch.decisions.each do |dec| %>
+                        <% if dec.user.group == true %>
+                            <li><b><%= link_to dec.user.name, decision_path(dec) %></b> <%= dec.decision %></li>
+                        <% end %>
+                        <% if dec.user == current_user %>
+                            <li><b><%= link_to current_user.username, edit_decision_path(dec) %></b>: <%= dec.decision %></li>
+                        <% end %>
                     <% end %>
-                    <% if dec.user == current_user %>
-                        <li><b><%= link_to current_user.username, edit_decision_path(dec) %></b>: <%= dec.decision %></li>
-                    <% end %>
+                </ul>
                 <% end %>
             </ul>
-            <% end %>
-        </ul>
-    <% end %>
-</ul>
+        <% end %>
+    </ul>
+</div>

@@ -39,6 +39,7 @@ class DecisionsController < ApplicationController
     def update
         if @decision.update(decision_params)
             redirect_to @decision
+            redirect_to decisions_path
         else
             render :edit
         end
