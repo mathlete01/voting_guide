@@ -2,7 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#matrix{ 
-    display: flex; 
-    border: 5px solid black 
+.group{ 
+    display: flex; flex-direction: column;  
+}
+
+#outer{ 
+   display: flex; justify-content: space-around
+      
 }
