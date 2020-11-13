@@ -31,7 +31,9 @@ m = User.create(
     group: false, 
     name: "Matty Sallin", 
     email: "msallin@gmail.com", 
+
     password: "yourmom", 
+
     admin: true,
     username: "msallin")
 
@@ -45,9 +47,11 @@ while i < group_array.length do
         group: true, 
         name: group_array[i], 
         email: "",
+
         password: Faker::Internet.password, 
         admin: false,
         username: Faker::Internet.username)
+
     i += 1
 end
 
