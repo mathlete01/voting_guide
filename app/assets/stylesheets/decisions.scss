@@ -4,10 +4,26 @@
 
 .group{ 
     display: flex; flex-direction: column;  
+        text-decoration: none;      
+        font-family: Arial;         
+        font-size: 14px;            
+        font-weight: normal;          
+}
+
+.main{
+    text-decoration: none;      
+    font-family: Arial;         
+    font-size: 14px;            
+    font-weight: normal;
+    margin: 50px 50px 50px 50px;          
 }
 
 #outer{ 
-   display: flex; justify-content: space-around  
+   display: flex; justify-content: space-around;
+    text-decoration: none;      
+    font-family: Arial;         
+    font-size: 14px;            
+    font-weight: normal;          
 }
 
 a.yes{

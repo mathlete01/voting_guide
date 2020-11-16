@@ -1,15 +1,19 @@
-<%= link_to "Home", decisions_path %>
+<div class = "main"></div>
 
-<h1><%= @decision.choice.category.title %>: <%= @decision.choice.choice %></h1>
+<h2><%= @decision.choice.category.title %>: <%= @decision.choice.choice %></h2>
+<p><%= @decision.choice.summary %></p>
+<hr> 
 <% if @decision.user.group == true %>
-    <h2><%= @decision.user.name %>: <%= @decision.decision %></h2>
+    <h3><%= @decision.user.name %>: <%= @decision.decision %></h3>
+    <p><%= @decision.annotation %></p>
 <% else %>
-    <h2><%= @decision.user.username %>: <%= @decision.decision %></h2>
+    <h3><%= @decision.user.username %>: <%= @decision.decision %></h3>
     <%= button_to "Edit", edit_decision_path, method: :get %>
 <br>
  <%= button_to "Delete", @decision, method: :delete, data: {confirm: "Are you sure?"} %>
 <% end %>
-
-
-
-
+<br>
+<br>
+<br>
+<%= link_to "Home", decisions_path %>
+</div>

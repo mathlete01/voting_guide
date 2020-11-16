@@ -18,5 +18,16 @@
 }
 
 .success{
-    color:green
+    color:green;
+}
+body {
+     background-color: white;      
+     background-size: 100%;         
+     color: black;                              
+}
+a {
+     text-decoration: none;      
+     font-family: Arial;         
+     font-size: 14px;            
+     font-weight: normal;          
 }

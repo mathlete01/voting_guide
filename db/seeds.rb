@@ -37,9 +37,6 @@ m = User.create(
     admin: true,
     username: "msallin")
 
-# Create Users: Groups
-# city: City.all[id=1]
-
 i = 0
 while i < group_array.length do 
     User.create(
@@ -54,18 +51,6 @@ while i < group_array.length do
 
     i += 1
 end
-
-# Create Users: Individuals
-# city: City.all[id=1]
-# 3.times do
-#     User.create(
-#         city: City.all.first, 
-#         group: false, 
-#         name: Faker::Name.name, 
-#         email: Faker::Internet.email, 
-#         password: Faker::Internet.password, 
-#         admin: false)
-# end
 
 # Create Choices
 joe_biden = Choice.create(

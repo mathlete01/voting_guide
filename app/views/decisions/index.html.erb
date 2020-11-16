@@ -1,8 +1,9 @@
+
 <% if logged_in? %>
 <p>Hi <%= current_user.username %>! Review the endorsements below and create your own voting guide to take to the polls.</p>
 <% end %>
 
-<div >
+
     <ul>
         <% @categories.each do |cat| %>
             <li><b><%= cat.title %></b></li>
@@ -15,7 +16,7 @@
                     <% ch.decisions.each do |dec| %>
                     <div class = "group" >
                         <% if dec.user.group == true %>
-                            <li><%= dec.user.name %></li>
+                            <li><b><%= dec.user.name %></b></li>
                             <% if dec.decision == "Yes" %>
                                 <b><%= link_to dec.decision, decision_path(dec), class: "yes" %></b>
                             <% elsif dec.decision == "No" %>
@@ -28,7 +29,7 @@
                     </div>
                     <div class = "group" >
                         <% if dec.user == current_user %>
-                            <li><%=  current_user.username %></li>
+                            <li><b><%=  current_user.username %></b></li>
                             <% if dec.decision == "" %>
                                 <li><b><%= link_to "Decide", edit_decision_path(dec) %></b></li>
                             <% else %>
@@ -48,4 +49,3 @@
             </ul>
         <% end %>
     </ul>
-</div>

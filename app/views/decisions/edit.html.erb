@@ -1,5 +1,8 @@
-<h1><%= @decision.choice.category.title %>: <%= @decision.choice.choice %></h1>
+<div class = "main"></div>
 
+<h2><%= @decision.choice.category.title %>: <%= @decision.choice.choice %></h2>
+<p><%= @decision.choice.summary %></p>
+<hr>
 
 <%= form_for @decision do |f| %>
     <% if @decision.errors.any? %>
@@ -9,10 +12,15 @@
             <% end %>
         </ul>
     <% end %>
-   
+    <%= f.label 'Your choice:' %> 
     <%= f.radio_button :decision, 'Yes' %> 
     <%= f.label :decision, 'Yes' %>
     <%= f.radio_button :decision, 'No' %> 
     <%= f.label :decision, 'No' %>
-    <%= f.submit %>
+    <%= f.submit "Save" %>
 <% end %>
+<br>
+<br>
+<br>
+<%= link_to "Home", decisions_path %>
+</div>
